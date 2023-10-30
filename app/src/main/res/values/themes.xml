@@ -15,6 +15,7 @@
 
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorAccent">@color/colorAccent</item>
+        <item name="background">@color/colorBackground</item>
     </style>
 
     <style name="Theme.Qiz" parent="Base.Theme.Qiz" />
