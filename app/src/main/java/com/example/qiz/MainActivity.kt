@@ -4,6 +4,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.content.Intent
 import android.widget.Button
+import android.widget.EditText
+import android.widget.ScrollView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.view.WindowCompat
@@ -29,8 +31,11 @@ class MainActivity : AppCompatActivity() {
                 Toast.makeText(this@MainActivity, "Please enter your name", Toast.LENGTH_SHORT).show()
             }
             else {
-                // If the string is valid continue to the next activity.
-                Intent(this, QuizQuestionsActivity::class.java).apply { startActivity(this) }
+                val intent = Intent(this@MainActivity, QuizQuestionsActivity::class.java)
+                // Pass the name through intent.
+                intent.putExtra(Constants.USER_NAME, et_name.text.toString())
+                // If the string is valid continue to the next activity through intent.
+                startActivity(intent)
                 finish()
             }
         }

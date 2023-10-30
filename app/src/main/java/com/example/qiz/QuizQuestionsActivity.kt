@@ -13,23 +13,14 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.AppCompatEditText
 import androidx.core.content.ContextCompat
+import androidx.core.view.WindowCompat
 
-class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener {
+class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
 
     // Global variables for current position and questions list.
     private var CurrentPosition: Int = 1 // Default and the first question position
     private var QuestionsList: ArrayList<Question>? = null
     private var SelectedOptionPosition: Int = 0
-    private var CorrectAnswers: Int = 0
-    val progressBar = findViewById<ProgressBar>(R.id.progressBar)
-    val tv_progress = findViewById<TextView>(R.id.tv_progress)
-    val tv_question = findViewById<TextView>(R.id.tv_question)
-    val iv_image = findViewById<ImageView>(R.id.iv_image)
-    val tv_option_one = findViewById<TextView>(R.id.tv_option_one)
-    val tv_option_two = findViewById<TextView>(R.id.tv_option_two)
-    val tv_option_three = findViewById<TextView>(R.id.tv_option_three)
-    val tv_option_four = findViewById<TextView>(R.id.tv_option_four)
-    val btn_submit = findViewById<Button>(R.id.btn_submit)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,18 +32,27 @@ class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener {
 //        }
 
         // Make the questions list and the current position variable global and remove the logs here.
-        QuestionsList = Constants().getQuestions()
+        QuestionsList = Constants.getQuestions()
         setQuestion()
+
+        var tv_option_one = findViewById<TextView>(R.id.tv_option_one)
+        var tv_option_two = findViewById<TextView>(R.id.tv_option_two)
+        var tv_option_three = findViewById<TextView>(R.id.tv_option_three)
+        var tv_option_four = findViewById<TextView>(R.id.tv_option_four)
 
         // Set all the click events for Options using the interface onClick listener.
         tv_option_one.setOnClickListener(this)
         tv_option_two.setOnClickListener(this)
         tv_option_three.setOnClickListener(this)
         tv_option_four.setOnClickListener(this)
-
     }
 
     override fun onClick(v: View?) {
+        var tv_option_one = findViewById<TextView>(R.id.tv_option_one)
+        var tv_option_two = findViewById<TextView>(R.id.tv_option_two)
+        var tv_option_three = findViewById<TextView>(R.id.tv_option_three)
+        var tv_option_four = findViewById<TextView>(R.id.tv_option_four)
+
         when (v?.id) {
             R.id.tv_option_one -> {
                 selectedOptionView(tv_option_one, 1)
@@ -71,35 +71,33 @@ class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener {
             }
 
             R.id.btn_submit -> {
+                var CorrectAnswers: Int = 0
 
                 if (SelectedOptionPosition == 0) {
 
                     CurrentPosition++
 
                     when {
-
                         CurrentPosition <= QuestionsList!!.size -> {
-
                             setQuestion()
                         }
                         else -> {
-
-                            Toast.makeText(this@QuizQuestionsActivity, "You have successfully completed the quiz. Your Score is : $CorrectAnswers", Toast.LENGTH_SHORT).show()
+                            Toast.makeText(this, "You have successfully completed the quiz. Your Score is : $CorrectAnswers", Toast.LENGTH_SHORT).show()
                         }
                     }
-                } else {
+                }
+                else {
                     val question = QuestionsList?.get(CurrentPosition - 1)
+                    var btn_submit = findViewById<Button>(R.id.btn_submit)
 
                     // This is to check if the answer is wrong
                     if (question!!.correctAnswer != SelectedOptionPosition) {
                         answerView(SelectedOptionPosition, R.drawable.wrong_option_border_bg)
                     }
-                    // TODO (STEP 2: Increase the count of correct answer by 1 if the answer is right.)
-                    // START
+                    // Increase the count of correct answer by 1 if the answer is right.
                     else {
                         CorrectAnswers++
                     }
-                    // END
 
                     // This is for correct answer
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
@@ -118,7 +116,13 @@ class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener {
 
     // Create a function to set the question in the UI components.
     private fun setQuestion() {
+        var tv_option_one = findViewById<TextView>(R.id.tv_option_one)
+        var tv_option_two = findViewById<TextView>(R.id.tv_option_two)
+        var tv_option_three = findViewById<TextView>(R.id.tv_option_three)
+        var tv_option_four = findViewById<TextView>(R.id.tv_option_four)
+        val progressBar = findViewById<ProgressBar>(R.id.progressBar)
         val question = QuestionsList!!.get(CurrentPosition - 1) // Getting the question from the list with the help of current position.
+        var btn_submit = findViewById<Button>(R.id.btn_submit)
 
         defaultOptionsView()
 
@@ -128,6 +132,10 @@ class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener {
         else {
             btn_submit.text = "SUBMIT"
         }
+
+        val tv_progress = findViewById<TextView>(R.id.tv_progress)
+        val tv_question = findViewById<TextView>(R.id.tv_question)
+        var iv_image = findViewById<ImageView>(R.id.iv_image)
 
         progressBar.progress = CurrentPosition // Setting the current progress in the progressbar using the position of question
         tv_progress.text = "$CurrentPosition" + "/" + progressBar.getMax() // Setting up the progress text
@@ -147,11 +155,15 @@ class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener {
 
         tv.setTextColor(Color.parseColor("#363A43"))
         tv.setTypeface(tv.typeface, Typeface.BOLD)
-        tv.background = ContextCompat.getDrawable(this@QuizQuestionsActivity, R.drawable.selected_option_border_bg)
+        tv.background = ContextCompat.getDrawable(this, R.drawable.selected_option_border_bg)
     }
 
     // A function to set default options view when the new question is loaded or when the answer is reselected.
     private fun defaultOptionsView() {
+        var tv_option_one = findViewById<TextView>(R.id.tv_option_one)
+        var tv_option_two = findViewById<TextView>(R.id.tv_option_two)
+        var tv_option_three = findViewById<TextView>(R.id.tv_option_three)
+        var tv_option_four = findViewById<TextView>(R.id.tv_option_four)
 
         val options = ArrayList<TextView>()
         options.add(0, tv_option_one)
@@ -162,15 +174,17 @@ class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener {
         for (option in options) {
             option.setTextColor(Color.parseColor("#7A8089"))
             option.typeface = Typeface.DEFAULT
-            option.background = ContextCompat.getDrawable(
-                this@QuizQuestionsActivity,
-                R.drawable.default_option_border_bg
-            )
+            option.background = ContextCompat.getDrawable(this, R.drawable.default_option_border_bg)
         }
     }
 
     // A function for answer view which is used to highlight the answer is wrong or right.
     private fun answerView(answer: Int, drawableView: Int) {
+        var tv_option_one = findViewById<TextView>(R.id.tv_option_one)
+        var tv_option_two = findViewById<TextView>(R.id.tv_option_two)
+        var tv_option_three = findViewById<TextView>(R.id.tv_option_three)
+        var tv_option_four = findViewById<TextView>(R.id.tv_option_four)
+
         when (answer) {
             1 -> {
                 tv_option_one.background = ContextCompat.getDrawable(this@QuizQuestionsActivity, drawableView)
@@ -187,4 +201,5 @@ class QuizQuestionsActivity : AppCompatActivity() , View.OnClickListener {
         }
     }
 }
+
 
