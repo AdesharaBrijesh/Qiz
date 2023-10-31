@@ -14,5 +14,6 @@
 
         <!-- Primary Colors -->
         <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccentDark</item>
     </style>
 </resources>
