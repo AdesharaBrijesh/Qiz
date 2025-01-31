@@ -1,68 +1,89 @@
-# Qiz - Android Quiz App
 
-![qiz-logo](https://github.com/AdesharaBrijesh/Qiz/assets/98079442/28d6e4be-60a8-4917-8de3-0dfaccedfe50)
 
-Qiz is a fun and engaging Android quiz app that challenges your knowledge with a variety of trivia questions.
+# 🎉 Qiz - The Ultimate Android Quiz App 🏆  
 
-## Table of Contents
+<p align="center">
+  <img src="https://github.com/AdesharaBrijesh/Qiz/assets/98079442/28d6e4be-60a8-4917-8de3-0dfaccedfe50" width="200">
+</p>  
 
-- [Installation](#installation)
-- [Usage](#usage)
-- [Screenshots](#screenshots)
-- [Features](#features)
-- [Contributing](#contributing)
-
-## Installation
-
-To get started with Qiz, follow these simple steps:
-
-1. Clone this repository to your local machine.
-
-git clone https://github.com/AdesharaBrijesh/AdesharaBrijesh.git
-
-2. Open the project in Android Studio.
-
-3. Build and run the app on an Android emulator or physical device.
-
-## Usage
-
-Once the app is up and running, you can:
-
-- Start a new quiz session.
-- Answer multiple-choice trivia questions.
-- See your score and progress.
-
-## Screenshots
-
-![WhatsApp Image 2023-10-31 at 7 58 00 AM](https://github.com/AdesharaBrijesh/Qiz/assets/98079442/9cd181c3-70ff-4120-95bd-279da0218248)
-![WhatsApp Image 2023-10-31 at 7 58 00 AM (1)](https://github.com/AdesharaBrijesh/Qiz/assets/98079442/79ad4889-b7a4-4188-8ab0-503a85190c78)
-![WhatsApp Image 2023-10-31 at 7 58 00 AM (2)](https://github.com/AdesharaBrijesh/Qiz/assets/98079442/55b2ae0a-dcc7-4a33-930d-b5d772e2fc90)
-![WhatsApp Image 2023-10-31 at 7 58 00 AM (3)](https://github.com/AdesharaBrijesh/Qiz/assets/98079442/b1d36c51-c78f-4426-bfe2-c0987f8532b0)
-![WhatsApp Image 2023-10-31 at 7 58 01 AM](https://github.com/AdesharaBrijesh/Qiz/assets/98079442/e181096b-597f-44a0-b4d2-23524d1b9b52)
-
-## Features
-
-- Variety of trivia questions.
-- User-friendly interface.
-- Real-time scoring.
-- Fun and educational quiz sessions.
-
-## Contributing
-
-We welcome contributions from the open-source community to make Qiz even better. If you'd like to contribute, follow these steps:
-
-1. Fork the repository.
-
-2. Create a new branch for your feature or bug fix.
-
-git checkout -b feature/your-feature-name
-
-3. Commit your changes.
-
-4. Push to your fork.
-
-5. Open a pull request and describe your changes.
+🚀 **Qiz** is a fun and engaging **Android Quiz App** 🧠 where you can challenge your knowledge with an exciting variety of trivia questions. Test yourself, learn new facts, and enjoy a competitive edge with real-time scoring! 🎯  
 
 ---
 
-Enjoy using Qiz and expanding your knowledge with every quiz session!
+## 📌 Table of Contents  
+- 🚀 [Features](#features)  
+- 🛠️ [Installation](#installation)  
+- 🎮 [How to Play](#how-to-play)  
+- 📸 [Screenshots](#screenshots)  
+- 💡 [Contributing](#contributing)  
+- 📜 [License](#license)  
+
+---
+
+## 🚀 Features  
+✅ Multiple-choice trivia questions 🧐  
+✅ Interactive and user-friendly UI 🎨  
+✅ Real-time scoring system 📊  
+✅ Fun and educational experience 🤓  
+✅ Completely free and open-source! 💖  
+
+---
+
+## 🛠️ Installation  
+
+Follow these steps to get started with **Qiz**:  
+
+1️⃣ **Clone this repository** to your local machine:  
+```bash
+git clone https://github.com/AdesharaBrijesh/Qiz.git
+```  
+2️⃣ **Open the project** in **Android Studio**.  
+3️⃣ **Sync dependencies** and **Run the app** on an emulator or real device.  
+
+---
+
+## 🎮 How to Play  
+
+🎯 **Launch the App** and enter your name.  
+🎯 **Start the Quiz** and answer the questions.  
+🎯 **Choose the right answer** from four options.  
+🎯 **See your score and progress** in real-time! 📊  
+🎯 **Challenge yourself** and improve your knowledge every day!  
+
+---
+
+## 📸 Screenshots  
+
+<p align="center">
+  <img src="https://github.com/user-attachments/assets/b1e7cb6b-d085-476b-9db2-b61782c0101e" width="180">
+  <img src="https://github.com/user-attachments/assets/6bd13e9b-9404-4df4-92e2-a344edab5ee6" width="180">
+  <img src="https://github.com/user-attachments/assets/a026018c-4e6d-4c20-8200-62d95edd1977" width="180">
+</p> 
+
+---
+
+
+## 💡 Contributing  
+
+👨‍💻 We welcome contributions to make **Qiz** even better! If you'd like to contribute:  
+
+1️⃣ **Fork this repository**  
+2️⃣ **Create a feature branch**  
+```bash
+git checkout -b feature/new-feature
+```  
+3️⃣ **Commit your changes**  
+4️⃣ **Push to your fork**  
+5️⃣ **Open a pull request**  
+
+We appreciate your help in making **Qiz** awesome! 🎉  
+
+---
+
+## 📜 License  
+
+This project is **open-source** and licensed under the **MIT License** 📄. Feel free to use, modify, and share!  
+
+🚀 **Enjoy playing Qiz and keep learning!** 🎉  
+
+---
